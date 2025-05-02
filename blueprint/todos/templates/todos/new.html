@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block page_title %}
+    Create New Task | Todo App
+{% endblock page_title %}
+    
+{% block main_content %}
+    <h1>Create New Task</h1>
+   <form action="{{ url_for("todos.create") }}" method="POST">
+        <input type="text" name="title" placeholder="What to do?"><br><br>
+        <textarea type="text" name="description" placeholder="Describe what to do"></textarea><br><br>
+        <label>
+            <input type="checkbox" name="is_active">
+            Done
+        </label> <br><br>
+        <button type="submit">Create New Task</button>
+   </form>
+{% endblock main_content %}

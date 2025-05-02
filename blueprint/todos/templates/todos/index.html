@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+
+{% block page_title %}
+    Task List | Todos App
+{% endblock page_title %}
+    
+
+{% block main_content %}
+    
+    {% if todos %}
+    <ul>
+    {% for todo in todos %}
+        <li>{{todo.title}}</li>
+    {% endfor %}
+    </ul>
+    <p>create <a href="{{ url_for("todos.create") }}">new task</a></p>
+    {% else %}
+        <p>No tasks yet. create <a href="{{ url_for("todos.create") }}">new task</a></p>
+    {% endif %}
+    <ul>
+{% endblock main_content %}
