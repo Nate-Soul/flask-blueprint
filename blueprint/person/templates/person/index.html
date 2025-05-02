@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+
+{% block page_title %}
+    People List | Person App
+{% endblock page_title %}
+    
+
+{% block main_content %}
+
+{% if people %}
+    <ul>
+    {% for person in people %}
+        <li>{{person.name}}</li>
+    {% endfor %}
+    </ul>
+    <p>create <a href="{{ url_for("person.create") }}">new person</a></p>
+{% else %}
+    <p>No person yet. Create <a href="{{ url_for("person.create") }}">new person</a></p>
+{% endif %}
+    
+{% endblock main_content %}
